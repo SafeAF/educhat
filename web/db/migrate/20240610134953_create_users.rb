@@ -17,8 +17,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
       t.string :unconfirmed_email
-      t.datetime :created_at
-      t.datetime :updated_at
+
       t.boolean :moderator
       t.boolean :locked
       t.boolean :administrator
