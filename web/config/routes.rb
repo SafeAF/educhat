@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'conversations/show'
   get 'home/index'
   root 'home#index'
   resources :users

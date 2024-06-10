@@ -1,0 +1,12 @@
+<!-- app/views/conversations/show.html.erb -->
+<%= turbo_stream_from @conversation %>
+<%= turbo_frame_tag @conversation do %>
+  <% @conversation.messages.each do |message| %>
+    <p><%= message.content %></p>
+  <% end %>
+
+  <%= form_with model: [@conversation, Message.new], data: { controller: "message" } do |form| %>
+    <%= form.text_field :content %>
+    <%= form.submit "Send" %>
+  <% end %>
+<% end %>
